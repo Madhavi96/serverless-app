@@ -14,7 +14,7 @@ functions:
   hello:
     handler: handler.hello
     events:
-     -http: 
+     - http:
         path: webhook
         method: post
         integration: lambda
