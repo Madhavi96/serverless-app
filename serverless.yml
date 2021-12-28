@@ -1,0 +1,21 @@
+service: serverless-app
+
+frameworkVersion: '2 || 3'
+
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  lambdaHashingVersion: 20201221
+  environment: 
+    GITHUB_TOKEN: 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
+
+functions:
+  hello:
+    handler: handler.hello
+    events:
+     -http: 
+        path: webhook
+        method: post
+        integration: lambda
+        cors: true
